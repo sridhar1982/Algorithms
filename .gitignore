@@ -1,0 +1,10 @@
+build
+*.iml
+*.ipr
+*.iws
+.gradle
+out
+.idea/
+classes/
+*.DS_Store
+src/main/resources/application-rqa3.properties
