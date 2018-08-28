@@ -16,10 +16,11 @@ public class CombinationSum {
     public static void main(String[] args) {
 
         //int[] input = {10,1,7,2,5,3,6};
-        int[] input = {1,2,3,5,6,7,10};
-        int target = 8;
+        //int[] input = {1,2,3,5,6,7,10};
+        int[] input = {8,7,6,3};
+        int target = 15;
         Set<Set<Integer>> set = new HashSet<>();
-        combinations(input, 8, 0, set, new ArrayList<>());
+        combinations(input, target, 0, set, new ArrayList<>());
         System.out.println(set);
         printCoinChangingSolution(target, input);
 
