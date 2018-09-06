@@ -1,9 +1,7 @@
-package interviewQuestions;
-
 import java.util.Arrays;
 
 /**
- *
+ * Created by I855798 on 7/18/18.
  */
 public class MaxPriorityHeap {
 
@@ -19,14 +17,6 @@ public class MaxPriorityHeap {
         heap.offer(7);
 
         System.out.println(heap);
-        System.out.println(heap.size);
-
-        int s = heap.size;
-
-        for (int i = 0; i< s; i++) {
-            System.out.println(heap.size);
-            heap.poll();
-        }
 
     }
 
@@ -93,12 +83,9 @@ public class MaxPriorityHeap {
             if (temp < data[child]){
                 data[hole] = data[child];
             }
-            else {
-                break;
-            }
-            child = 2* child;
-            hole = child/2;
+            hole = child;
         }
+
         data[hole] = temp;
     }
 

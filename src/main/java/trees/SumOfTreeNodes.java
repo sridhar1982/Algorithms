@@ -34,6 +34,10 @@ public class SumOfTreeNodes {
         //sumOnAllPaths(node8, new ArrayList<>(), 0);
         pathSumK(node8, 11, new ArrayList<>(), 0);
 
+       CustomWrapper result =  givenSumTree(node8, 16);
+       System.out.println(result.result.val);
+       System.out.println(result.found);
+
 
     }
 
@@ -75,10 +79,43 @@ public class SumOfTreeNodes {
 
         nodes.remove(nodes.size()-1);
 
+    }
 
+    public static CustomWrapper givenSumTree(TreeNode root, int sum) {
+
+        CustomWrapper wrapper = new CustomWrapper();
+
+        if (root==null) {
+            return wrapper;
+        }
+
+        CustomWrapper leftW = givenSumTree(root.left, sum);
+        CustomWrapper rightW = givenSumTree(root.right, sum);
+
+        if (leftW.found) {
+            return leftW;
+        }
+        else if (rightW.found) {
+            return rightW;
+        }
+        else {
+            int temp = leftW.count + rightW.count + root.val;
+            if (temp == sum) {
+                wrapper.found = true;
+                wrapper.result = root;
+            }
+            wrapper.count = temp;
+        }
+        return wrapper;
     }
 
     public static void printPaths(List<Integer> nodes, int sum) {
         System.out.println("sum " + sum + "; list " + nodes);
+    }
+
+    public static class CustomWrapper {
+        private int count;
+        private boolean found;
+        private TreeNode result;
     }
 }

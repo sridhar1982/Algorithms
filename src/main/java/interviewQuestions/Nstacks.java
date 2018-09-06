@@ -1,5 +1,3 @@
-package interviewQuestions;
-
 import java.util.Arrays;
 
 /**
@@ -39,6 +37,7 @@ public class Nstacks {
 
     }
 }
+
 
 
 class NStack {
