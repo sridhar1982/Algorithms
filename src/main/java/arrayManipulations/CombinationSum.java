@@ -23,6 +23,9 @@ public class CombinationSum {
         combinations(input, target, 0, set, new ArrayList<>());
         System.out.println(set);
         printCoinChangingSolution(target, input);
+        input = new int[]{1, 2, 3, 5, 6, 7, 10};
+        target = 8;
+        printCoinChangingSolution(target, input);
 
     }
 
